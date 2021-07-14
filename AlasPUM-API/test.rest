@@ -1,0 +1,80 @@
+### 
+POST  http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "username": "migues2000",
+    "password": "th1gp3de"
+}
+
+###
+POST  http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+    "username": "migues2000",
+    "password": "th1gp3de"
+}
+
+###
+GET http://localhost:8080/special
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOWZlN2IxZGY5MGIzMDUxOWVlM2IzYyIsImVtYWlsIjoiYWxlamFuZHJvbWlndWVzMkBnbWFpbC5jb20iLCJpYXQiOjE2MDQzMTUwODksImV4cCI6MTYwNDQwMTQ4OX0.8MJrSDMv9Q75BftQ74xmz6VDP55HMCzXoZXXbU-I4lg
+
+
+
+
+### Add Plane
+POST  http://localhost:8080/planes
+Content-Type: application/json
+
+{
+    "number": 102,
+    "entryDate": "2018-03-15",
+    "flightHours": 46.7,
+    "planeModel": "Boeing 747",
+    "videoURL": "https://www.instagram.com/nahuelmarquez44"
+}
+
+
+### Get All Planes
+GET   http://localhost:8080/planes
+
+
+### Get Plane by ID
+GET   http://localhost:8080/planes/5fb19511ea94771dacc21261
+
+
+### Add Plane with Seats
+POST  http://localhost:8080/planes
+Content-Type: application/json
+
+{
+    "plane" : {
+        "number": 105,
+        "entryDate": "2018-03-17",
+        "flightHours": 46.7,
+        "planeModel": "Boeing 747",
+        "videoURL": "https://www.instagram.com/nahuelmarquez44"
+    },
+    "rows": [{
+            "rowID": "A",
+            "economySeatsQuantity": 2,
+            "premiumSeatsQuantity": 2,
+            "businessSeatsQuantity": 2,
+            "firstClassSeatsQuantity": 2
+        },
+        {
+            "rowID": "B",
+            "economySeatsQuantity": 4,
+            "premiumSeatsQuantity": 4,
+            "businessSeatsQuantity": 4,
+            "firstClassSeatsQuantity": 4
+        }]
+}
+
+
+
+
+###
+POST http://http://localhost:8080/search/searchFlight
+Content-Type: application/json
